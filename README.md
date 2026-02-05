@@ -39,30 +39,41 @@ This is a starter template for your lab assignments. Follow the GitHub setup bel
 
 ---
 
-## Lab 1 Assignment
+## Lab 2 Assignment
 
-### About Controller Implementation
+### CreateFighterController Implementation with Form Validation
 
-Implement a new `AboutController` with the following requirements:
+Implement a `CreateFighterController` with POST method to process fighter registration and add it to the fighter pool (list of fighters similar to what we did in class with players).
 
-#### Endpoint Requirements
-- **Path:** `localhost:8080/about`
-- **HTTP Method:** GET
-- **Return:** HTML template displaying content about the "Tekken Reborn" game
+#### Requirements
 
-#### Template Requirements
-- **Heading:** Display an `<h1>` tag with the text `Tekken Reborn`
-- **Description:** Add a description of Tekken Reborn or the game's features
-  - Be creative! Use any HTML elements you like (paragraphs, divs, lists, images, etc.)
-  - Make it visually appealing using the existing `styles.css`
-  - Include at least 2-3 sentences of meaningful content
+##### Controller Implementation
+- **Implement `createFighter()` method** with POST signature
+  - Handle form submissions from the fighter registration form
+  - Add submitted fighters to the fighter pool (list)
+  - Redirect on successful submission
 
-#### Example Output
-```html
-<h1>Tekken Reborn</h1>
-<p>An epic fighting game where legendary warriors clash...</p>
-<!-- Add more creative content here -->
-```
+##### Validation Requirements
+- **All fields required:** name, health, damage, resistance
+- **Health validation:** Must be more than 1000 but less than 1500
+- **Damage validation:** Must be less than 100
+- **Resistance validation:** Must be from 0 to 10 and must be a double value
+
+##### Form & Display
+- **CreateFighter Template:** 
+  - Create a registration form that guides users to fix validation issues
+  - Display validation error messages on the form
+  - Make it visually appealing using the existing `styles.css` and Bootstrap
+
+- **FighterController:**
+  - Create a new `FighterController` that renders fighters in a table
+  - Display all registered fighters similar to what we did with Players
+  - Table should show: name, health, damage, resistance
+
+##### Testing
+- Ensure validation is properly working on form submission
+- Test all validation scenarios
+- Verify fighters are added to the list successfully
 
 ---
 
@@ -75,13 +86,13 @@ Implement a new `AboutController` with the following requirements:
 4. Commit your changes:
    ```bash
    git add .
-   git commit -m "Lab 1: Implement About Controller"
+   git commit -m "Lab 2: Implement CreateFighterController with Validation"
    ```
 5. Push to your fork:
    ```bash
    git push origin feature/lab-yourname
    ```
-6. Create a pull request 
+6. Create a pull request and submit the link on BlackBoard
 
 ---
 
